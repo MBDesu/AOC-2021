@@ -3,13 +3,17 @@
 #include <string>
 #include <cstring>
 #include <math.h>
+#include <bits/stdc++.h>
 
 int calc_epsilon(int gamma) {
-  // lmao it works on 64 bit machines, i promise
-  return ~gamma ^ 0b1111111111111111111111111111111111111111111111111111000000000000;
+  // the below line does work, but uh...bitset exists, I learned
+  // return ~gamma ^ 0b1111111111111111111111111111111111111111111111111111000000000000;
+  std::bitset<12> gamma_bits(gamma);
+  std::bitset<12> epsilon_bits = gamma_bits.flip();
+  return (int) epsilon_bits.to_ulong();
 }
 
-int calc_gamma(int* counts, int num_lines) {
+int calc_gamma(int *counts, int num_lines) {
   int gamma = 0;
   for (size_t i = 0; i < 12; i++) {
     int most_common = counts[i] > (num_lines / 2) ? 1 : 0;
