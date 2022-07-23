@@ -31,7 +31,6 @@ void parse_line(std::ifstream *file, int *result) {
       tokens = std::strtok(NULL, " ");
     }
     parse_command(tokens_v.at(0), std::stoi(tokens_v.at(1)), result);
-
   }
 }
 
