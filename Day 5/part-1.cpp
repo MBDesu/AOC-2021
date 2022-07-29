@@ -134,11 +134,8 @@ int parse_file(ifstream& file) {
   // print_lines(lines);
   int max_x = find_max(lines, false);
   int max_y = find_max(lines, true);
-  cout << "max_x: " << max_x << endl;
-  cout << "max_y: " << max_y << endl;
   construct_grid(grid, max_x, max_y);
   populate_grid(grid, lines);
-  cout << "grid is " << grid[1].size() << "x" << grid.size() << endl;
   // print_grid(grid);
   return find_num_intersections(grid);
 }
