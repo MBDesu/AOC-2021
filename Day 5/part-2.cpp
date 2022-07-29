@@ -50,6 +50,19 @@ void populate_grid(vector<vector<point>>& grid, vector<line>& lines) {
       for (size_t j = min(x2, x1); j <= max(x2, x1); j++) {
         grid.at(y1).at(j).times_visited += 1;
       }
+    } else {
+      int slope = (y2 - y1) / (x2 - x1);
+      if (slope < 0) {
+        int y_start = max(y2, y1);
+        for (size_t j = 0; j <= abs(x2 - x1); j++) {
+          grid.at(y_start - j).at(min(x2, x1) + j).times_visited += 1;
+        }
+      } else {
+        int y_start = min(y2, y1);
+        for (size_t j = 0; j <= abs(x2 - x1); j++) {
+          grid.at(y_start + j).at(min(x2, x1) + j).times_visited += 1;
+        }
+      }
     }
   }
 }
