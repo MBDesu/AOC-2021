@@ -28,8 +28,8 @@ int min(int a, int b) {
 
 int find_num_intersections(vector<vector<point>>& grid) {
   int num_intersections = 0;
-  for (int i = 0; i < grid.size(); i++) {
-    for (int j = 0; j < grid[i].size(); j++) {
+  for (size_t i = 0; i < grid.size(); i++) {
+    for (size_t j = 0; j < grid[i].size(); j++) {
       if (grid[i][j].times_visited > 1) {
         num_intersections++;
       }
