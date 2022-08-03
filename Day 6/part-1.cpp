@@ -11,7 +11,7 @@ void print_state(vector<int>& lanternfish) {
   cout << days_passed << ": ";
   for (size_t i = 0; i < lanternfish.size(); i++) {
     if (i < lanternfish.size() - 1) {
-      cout << lanternfish.at(i) << ", ";
+      cout << lanternfish.at(i) << ",";
     } else {
       cout << lanternfish.at(i) << endl;
     }
