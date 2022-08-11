@@ -30,4 +30,12 @@ class stack {
     int size() {
       return data.size();
     }
+
+    auto begin() {
+      return data.begin();
+    }
+
+    auto end() {
+      return data.end();
+    }
 };
